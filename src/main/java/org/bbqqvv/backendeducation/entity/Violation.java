@@ -15,15 +15,12 @@ public class Violation {
 
     @Id
     private String id;
-
-    private String studentCode;
+    private String userCode;
+    private String violationCode;
     private String fullName;
-
     private UserType role;
-
     private String description;
     private ViolationLevel level;
-
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private String createdBy;

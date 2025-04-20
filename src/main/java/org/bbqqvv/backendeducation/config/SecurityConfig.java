@@ -37,18 +37,12 @@ public class SecurityConfig {
 
 	// Các URL không yêu cầu xác thực
 	private static final String[] WHITE_LIST_URL = {
-			"/auth/login",
-			"/auth/register",
-			"/auth/forgot-password",
-			"/auth/verify-otp",
-			"/auth/reset-password",
+			"/api/auth/**",
 			"/api/newsletters/**",
 			"/api/quotes/**",
 			"/api/leave-requests/**",
 			"/api/violations/**",
-			"/api/chatbot/**",
-			"/api/users",
-			
+			"/api/chatbot/**"
 
 
 	};
@@ -95,7 +89,7 @@ public class SecurityConfig {
 	private UrlBasedCorsConfigurationSource corsConfigurationSource() {
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 		CorsConfiguration config = new CorsConfiguration();
-		config.setAllowedOrigins(List.of("http://localhost:8081", "http://192.168.1.8:8081")); // Thêm IP Expo
+		config.setAllowedOrigins(List.of("http://localhost:8081", "http://192.168.1.4:8081")); // Thêm IP Expo
 		config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 		config.addAllowedHeader("*");
 		config.setAllowCredentials(true);

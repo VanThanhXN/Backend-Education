@@ -50,8 +50,9 @@ public class AuthenticationService {
                 .fullName(registerUserDto.getFullName())
                 .email(registerUserDto.getEmail())
                 .password(encodedPassword)
-                .studentCode(registerUserDto.getStudentCode())
+                .userCode(registerUserDto.getUserCode())
                 .studentClass(registerUserDto.getStudentClass())
+                .teachingClasses(registerUserDto.getTeachingClasses())
                 .role(registerUserDto.getRole())
                 .build();
 

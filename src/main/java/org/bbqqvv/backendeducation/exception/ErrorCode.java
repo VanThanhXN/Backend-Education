@@ -21,7 +21,7 @@ public enum ErrorCode {
     EMAIL_EXISTED(1008, "Email existed", HttpStatus.BAD_REQUEST),
     WRONG_PASSWORD(1009, "Wrong password", HttpStatus.BAD_REQUEST),
     FORBIDDEN(1010, "Forbidden", HttpStatus.FORBIDDEN),
-
+    NOT_FOUND(1011,"Not Found", HttpStatus.NOT_FOUND),
     // 2000 - CRUD
     NEWSLETTER_NOT_FOUND(2000, "Newsletter not found", HttpStatus.NOT_FOUND),
     IMAGE_UPLOAD_FAILED(2001, "Image upload failed", HttpStatus.INTERNAL_SERVER_ERROR),
@@ -35,6 +35,8 @@ public enum ErrorCode {
     EXAM_SCHEDULE_NOT_FOUND(2009, "Exam schedule not found", HttpStatus.NOT_FOUND),
     TEACHER_SCHEDULE_CONFLICT(2010, "Teacher schedule conflict", HttpStatus.CONFLICT),
     USER_PROFILE_NOT_FOUND(2011, "User profile not found", HttpStatus.NOT_FOUND),
+    INVALID_FILE(2012, "Invalid file", HttpStatus.BAD_REQUEST),
+    CLASS_NOT_FOUND(2013, "Class not found", HttpStatus.NOT_FOUND),
     // 5000 Series - Account Errors
     ACCOUNT_DISABLED(5001, "Account is disabled", HttpStatus.FORBIDDEN),
     // 7000 Series - Validation Errors

@@ -1,4 +1,5 @@
 package org.bbqqvv.backendeducation.service.img;
+
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
 import lombok.RequiredArgsConstructor;
@@ -35,5 +36,23 @@ public class CloudinaryService {
             urls.add(uploadImage(file));
         }
         return urls;
+    }
+    /**
+     * Upload file bất kỳ (PDF, DOCX, ZIP...)
+     */
+    public String uploadFile(MultipartFile file) {
+        try {
+            Map<String, Object> options = ObjectUtils.asMap(
+                    "resource_type", "raw"
+            );
+
+            Map<?, ?> uploadResult = cloudinary.uploader().upload(
+                    file.getBytes(),
+                    options
+            );
+            return uploadResult.get("secure_url").toString();
+        } catch (IOException e) {
+            throw new RuntimeException("File upload failed", e);
+        }
     }
 }
